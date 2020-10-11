@@ -200,6 +200,7 @@ public class cffx {
                         {
                             System.out.println("Colon");
                             flag=0;
+                            word = "";
                         }
                         if(word!="")
                         {
