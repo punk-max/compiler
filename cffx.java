@@ -106,6 +106,8 @@ public class cffx {
         for (int i = 0; i < str.length(); i++) {
             if(str.charAt(i)!='0')
                 return str.substring(i);
+            if(i==str.length()-1)
+                return "0";
         }
         return str;
     }
