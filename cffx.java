@@ -137,7 +137,10 @@ public class cffx {
                 }
             }
             else
-                System.out.println("Unknown2");
+            {
+                System.out.println("Unknown");
+                System.exit(0);
+            }
     }
 
         public static void main(String[] args){
@@ -179,7 +182,10 @@ public class cffx {
                                 flag=0;
                             }
                             else
-                                System.out.println("Unknown1");
+                            {
+                                System.out.println("Unknown");
+                                System.exit(0);
+                            }
                         }
                         else{
                             word+=c;
