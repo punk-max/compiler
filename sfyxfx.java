@@ -133,7 +133,7 @@ public class sfyxfx {
                     System.out.println("E");
                     System.exit(0);
                 }
-                while(Compare((char)stack2.peek(),c) > 1)//如果栈顶的终结符优先级大于等于读入符号
+                while(Compare((char)stack2.peek(),c) > 2)//如果栈顶的终结符优先级大于等于读入符号
                 {
                     //进行规约
                     if((char)stack2.peek() == 'i')//符号栈栈顶为i，直接规约成E
@@ -166,6 +166,8 @@ public class sfyxfx {
                         }
                     }
                     else {//由优先矩阵可以看到读入为左括号时优先级均为小于，故此处只能是右括号
+                        stack1.pop();
+                        stack2.pop();
                         if((char)stack1.peek() != 'E')
                         {
                             System.out.println("RE");
@@ -174,7 +176,10 @@ public class sfyxfx {
                         else{
                             stack1.pop();
                             if((char)stack1.peek() != '(')
+                            {
                                 System.out.println("RE");
+                                System.exit(0);
+                            }
                             else{
                                 stack1.pop();
                                 stack1.push('E');
@@ -184,7 +189,7 @@ public class sfyxfx {
                         }
                     }
                 }
-                if(Compare((char)stack2.peek(),c) == 1) {//如果栈顶的终结符优先级小于读入符号，入栈
+                if(Compare((char)stack2.peek(),c) == 1 || Compare((char)stack2.peek(),c) == 2) {//如果栈顶的终结符优先级小于等于读入符号，入栈
                     stack1.push(c);
                     stack2.push(c);
                     System.out.println("I" + c);
