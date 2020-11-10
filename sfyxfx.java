@@ -175,8 +175,12 @@ public class sfyxfx {
                             stack1.pop();
                             if((char)stack1.peek() != '(')
                                 System.out.println("RE");
-                            else
+                            else{
+                                stack1.pop();
+                                stack1.push('E');
+                                stack2.pop();
                                 System.out.println("R");
+                            }
                         }
                     }
                 }
