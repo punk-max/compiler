@@ -1,4 +1,4 @@
 FROM openjdk:12
 WORKDIR /app/
 COPY ./* ./
-RUN javac cffx.java
+RUN javac sfyxfx.java
